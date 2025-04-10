@@ -119,4 +119,8 @@ if __name__ == "__main__":
     output_file = 'nft_traits_rarity.json'
     
     print(f"Démarrage de la conversion de {input_file} vers {output_file}")
+<<<<<<< HEAD
     traits_data = convert_traits_to_json(input_file, output_file)
+=======
+    traits_data = convert_traits_to_json(input_file, output_file)
+>>>>>>> 5c20d90508c253178ee89e1bc817c70d9d242cd2

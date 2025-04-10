@@ -272,4 +272,8 @@ def find_legendary_nfts(limit=50, rarity_data=None):
     nft_scores.sort(key=lambda x: x["score"])
     
     # Retourner les top NFTs (pas de tuple)
+<<<<<<< HEAD
     return nft_scores[:limit] 
+=======
+    return nft_scores[:limit] 
+>>>>>>> 5c20d90508c253178ee89e1bc817c70d9d242cd2
