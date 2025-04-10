@@ -1,37 +1,4 @@
 {
-<<<<<<< HEAD
-  "1": {
-    "ACCESSORY": "beer",
-    "BACKGROUND": "X_ray_blue",
-    "BODY": "white_skin",
-    "EYES": "rockstar",
-    "FUR": "White_FUR",
-    "HAT": "crown",
-    "POCKET": "money",
-    "SHIRT": "black_suit"
-  },
-  "42": {
-    "ACCESSORY": "balloon",
-    "BACKGROUND": "gold",
-    "BODY": "white_skin",
-    "EYES": "kawai",
-    "FUR": "Pink_Fur",
-    "HAT": "halo",
-    "POCKET": "flower",
-    "SHIRT": "knight_shirt"
-  },
-  "123": {
-    "ACCESSORY": "microphone",
-    "BACKGROUND": "midnight_blue",
-    "BODY": "white_skin",
-    "EYES": "cyborg_eyes",
-    "FUR": "Apple_Green_Fur",
-    "HAT": "police_helmet",
-    "POCKET": "pen",
-    "SHIRT": "blue_tunique"
-  }
-} 
-=======
   "ACCESSORY": [
     {
       "trait": "beer",
@@ -1724,4 +1691,3 @@
     }
   ]
 }
->>>>>>> 5c20d90508c253178ee89e1bc817c70d9d242cd2
