@@ -279,6 +279,11 @@ def load_data():
 # Charger les données
 data, nft_data = load_data()
 
+# Vérifiez si les données ont été chargées correctement
+if data is None:
+    st.error("Erreur lors du chargement des données. Veuillez vérifier le fichier JSON.")
+    st.stop()  # Arrêtez l'exécution si les données ne sont pas disponibles
+
 # En-tête avec logo amélioré
 st.markdown('<div class="app-header">', unsafe_allow_html=True)
 col_logo, col_title = st.columns([1, 4])
