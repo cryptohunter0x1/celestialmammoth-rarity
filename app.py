@@ -17,6 +17,76 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# Ajoutez ce code après st.set_page_config
+st.markdown("""
+<style>
+body {
+    background-color: #121212 !important;
+    color: white !important;
+}
+.stApp {
+    background-color: #121212 !important;
+}
+.main {
+    background-color: #121212 !important;
+}
+header {
+    background-color: #121212 !important;
+}
+.block-container {
+    background-color: #121212 !important;
+}
+footer {
+    background-color: #121212 !important;
+}
+
+/* Style pour masquer le bandeau Streamlit en haut */
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Pour les widgets */
+div.stSelectbox > div[data-baseweb="select"] > div {
+    background-color: #2a2a2a !important;
+    color: white !important;
+}
+
+/* Amélioration pour la section Traits Summary */
+h3, h4 {
+    color: #4CAF50 !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+}
+
+/* Style pour la zone de texte du résumé */
+.stMarkdown p {
+    color: white !important;
+    font-size: 1.1rem !important;
+    background-color: rgba(42, 42, 42, 0.7) !important;
+    padding: 10px 15px !important;
+    border-radius: 8px !important;
+    border-left: 3px solid #4CAF50 !important;
+    margin: 10px 0 !important;
+}
+
+/* Mettre en évidence les informations importantes */
+.stMarkdown strong {
+    color: #8bc34a !important;
+    font-weight: bold !important;
+}
+
+/* Style pour les informations numériques */
+.stMarkdown p:contains("Average rarity") {
+    font-size: 1.2rem !important;
+    background-color: rgba(76, 175, 80, 0.2) !important;
+    border: 1px solid rgba(76, 175, 80, 0.5) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Ensuite seulement, importez utils
 from utils import (
     normalize_nft_number,
@@ -377,16 +447,16 @@ with tabs[0]:
                 )
 
             # Ajouter une section résumé
-            st.markdown(
-                f"""
-                <div style="margin-top: 20px; padding: 15px; background-color: #1e1e1e; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                    <h4 style="margin-top: 0;">Traits Summary</h4>
-                    <p>Found {trait_count} traits with rarity data</p>
-                    <p>Average rarity: <strong>{total_rarity/trait_count:.2f}%</strong> if all traits are considered equal</p>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+            average_rarity = total_rarity / trait_count if trait_count > 0 else 0
+            st.markdown(f"""
+            <div style="background-color: #2a2a2a; padding: 15px; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+                <h3 style="color: #4CAF50; margin-top: 0;">Traits Summary</h3>
+                <p style="font-size: 16px; color: white;">Found <strong style="color: #8bc34a;">{trait_count}</strong> traits with rarity data</p>
+                <p style="font-size: 18px; color: white; background-color: rgba(76, 175, 80, 0.2); padding: 10px; border-radius: 5px;">
+                    Average rarity: <strong style="color: #8bc34a;">{average_rarity:.2f}%</strong> if all traits are considered equal
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
         else:
             if input_method == "Enter NFT Number" and input_nft:
                 st.error("NFT found but no matching rarity data for its traits")
@@ -661,7 +731,7 @@ with tabs[2]:
                             {tier.capitalize()} - {score:.2f}%
                         </span>
                     </p>
-                    <p>Traits uniques: {unique_count} | Légendaires: {legendary_count}</p>
+                    <p>Unique traits: {unique_count} | Legendary: {legendary_count}</p>
                 </div>
                 """, unsafe_allow_html=True)
                 
@@ -684,7 +754,7 @@ with tabs[2]:
                         </div>
                         """, unsafe_allow_html=True)
     else:
-        st.info("Aucun NFT ne correspond à vos critères. Essayez de modifier les filtres.")
+        st.info("No NFT matches your criteria. Try modifying the filters.")
 
 with tabs[3]:
     # About tab
