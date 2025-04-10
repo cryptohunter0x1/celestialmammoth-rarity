@@ -7,11 +7,12 @@ import zipfile
 import tempfile
 import os
 import shutil
+import plotly.graph_objects as go
 
 # Celle-ci doit être la première commande Streamlit
 st.set_page_config(
-    page_title="NFT Traits Rarity Checker",
-    page_icon="🎭",
+    page_title="NFT Rarity Checker",
+    page_icon="🏆",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -26,41 +27,8 @@ from utils import (
 )
 
 # Page configuration
-try:
-    with open('style.css') as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-except:
-    # Fallback inline CSS
-    st.markdown("""
-    <style>
-        body {
-            background-color: #121212;
-            color: white;
-        }
-        .section-container {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border: 2px solid #4CAF50;
-        }
-        .trait-card {
-            background-color: #2a2a2a;
-            border-left: 5px solid;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            color: white;
-        }
-    </style>
-    """, unsafe_allow_html=True)
-
-# Fonction pour charger le fichier CSS
-def load_css():
-    with open("style.css", "r") as f:
-        style = f.read()
-    st.markdown(f"<style>{style}</style>", unsafe_allow_html=True)
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Mappings directs pour les traits et catégories
 CATEGORY_MAP = {
@@ -202,9 +170,6 @@ def load_nft_data():
         # Si le fichier n'existe pas, retourner un dictionnaire vide
         return {}
 
-# Charger le CSS
-load_css()
-
 # Charger les données
 data = load_data()
 nft_data = load_nft_data()
@@ -242,7 +207,7 @@ with tabs[0]:
     total_rarity = 0
     trait_count = 0
     
-    # Options de saisie
+    # Options de saisie en anglais
     input_method = st.radio("Choose input method:", ["Enter NFT Number", "Select Traits Manually"], horizontal=True)
     
     # Créer deux colonnes pour la mise en page
@@ -498,28 +463,18 @@ with tabs[0]:
             global_stars_html = "★" * global_stars + "☆" * (5 - global_stars)
             
             # Affichage amélioré du score global
-            st.markdown(
-                f"""
-                <div style="background-color: #1e1e1e; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                    <h3 style="margin-top: 0; color: {rarity_color};">{rarity_tier}</h3>
-                    
-                    <div style="font-size: 28px; color: {rarity_color}; letter-spacing: 5px; margin: 15px 0;">
-                        {global_stars_html}
-                    </div>
-                    
-                    <div style="font-size: 22px; font-weight: bold; margin: 10px 0;">
-                        {final_rarity_pct:.2f}%
-                    </div>
-                    
-                    <div style="background-color: #2a2a2a; height: 20px; border-radius: 10px; margin: 15px 0;">
-                        <div style="background: linear-gradient(90deg, {rarity_color}, #8bc34a); width: {min(final_rarity_pct * 5, 100)}%; height: 100%; border-radius: 10px;"></div>
-                    </div>
-                    
-                    <p style="margin-bottom: 0; font-size: 14px; opacity: 0.8;">Based on {trait_count} traits</p>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+            st.markdown(f'''
+            <div style="font-size: 28px; color: {rarity_color}; letter-spacing: 5px; margin: 15px 0; text-align: center;">
+                ★★★★★
+            </div>
+            <div style="font-size: 22px; font-weight: bold; margin: 10px 0; text-align: center;">
+                {final_rarity_pct:.2f}%
+            </div>
+            <div style="background-color: #2a2a2a; height: 20px; border-radius: 10px; margin: 15px 0;">
+            <div style="background: linear-gradient(90deg, {rarity_color}, #8bc34a); width: {min(final_rarity_pct * 5, 100)}%; height: 100%; border-radius: 10px;"></div>
+            </div>
+            <p style="margin-bottom: 0; font-size: 14px; opacity: 0.8; text-align: center;">Based on {trait_count} traits</p>
+            ''', unsafe_allow_html=True)
 
             # Après l'affichage des étoiles, ajoutons une échelle visuelle de rareté
             st.markdown(
@@ -648,7 +603,7 @@ with tabs[1]:
 
 with tabs[2]:
     st.header("Legendary & Rare NFTs Gallery")
-    st.markdown("Découvrez les NFTs les plus rares de la collection, basés sur notre système de calcul de rareté avancé.")
+    st.markdown("Discover the rarest NFTs in the collection, based on our advanced rarity calculation system.")
     
     # Trouver les NFTs légendaires
     try:
@@ -667,7 +622,7 @@ with tabs[2]:
     filtered_nfts = [nft for nft in top_nfts if nft["tier"] in rarity_filter]
     
     # Afficher le nombre de NFTs trouvés
-    st.write(f"**{len(filtered_nfts)} NFTs** correspondant aux critères sélectionnés")
+    st.write(f"**{len(filtered_nfts)} NFTs** matching the selected criteria")
     
     # Afficher les NFTs en grille simple
     if filtered_nfts:
