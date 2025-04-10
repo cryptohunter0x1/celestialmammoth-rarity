@@ -1,0 +1,2018 @@
+{
+  "BACKGROUND": [
+    {
+      "trait": "codex",
+      "rarity": 3.52,
+      "tier": "rare",
+      "count": 88
+    },
+    {
+      "trait": "pastel_green",
+      "rarity": 8.36,
+      "tier": "uncommon",
+      "count": 209
+    },
+    {
+      "trait": "pastel_blue",
+      "rarity": 8.44,
+      "tier": "uncommon",
+      "count": 211
+    },
+    {
+      "trait": "purple_celestia",
+      "rarity": 8.44,
+      "tier": "uncommon",
+      "count": 211
+    },
+    {
+      "trait": "blue_sky",
+      "rarity": 4.2,
+      "tier": "rare",
+      "count": 105
+    },
+    {
+      "trait": "code_rain",
+      "rarity": 4.32,
+      "tier": "rare",
+      "count": 108
+    },
+    {
+      "trait": "eggplant",
+      "rarity": 8.72,
+      "tier": "uncommon",
+      "count": 218
+    },
+    {
+      "trait": "america",
+      "rarity": 3.2399999999999998,
+      "tier": "rare",
+      "count": 81
+    },
+    {
+      "trait": "space",
+      "rarity": 7.68,
+      "tier": "uncommon",
+      "count": 192
+    },
+    {
+      "trait": "money",
+      "rarity": 2.88,
+      "tier": "epic",
+      "count": 72
+    },
+    {
+      "trait": "lavender",
+      "rarity": 9.32,
+      "tier": "uncommon",
+      "count": 233
+    },
+    {
+      "trait": "vortex",
+      "rarity": 4.16,
+      "tier": "rare",
+      "count": 104
+    },
+    {
+      "trait": "grey_background",
+      "rarity": 8.28,
+      "tier": "uncommon",
+      "count": 207
+    },
+    {
+      "trait": "midnight_blue",
+      "rarity": 6.4799999999999995,
+      "tier": "rare",
+      "count": 162
+    },
+    {
+      "trait": "spider",
+      "rarity": 2.7199999999999998,
+      "tier": "epic",
+      "count": 68
+    },
+    {
+      "trait": "wall",
+      "rarity": 3.2,
+      "tier": "rare",
+      "count": 80
+    },
+    {
+      "trait": "iceberg",
+      "rarity": 4.72,
+      "tier": "rare",
+      "count": 118
+    },
+    {
+      "trait": "light_bleu",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "White",
+      "rarity": 0.24,
+      "tier": "legendary",
+      "count": 6
+    },
+    {
+      "trait": "flashing_light",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "America",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "halloween",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "Solar_Tide ",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "X_ray_blue",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "dark_red",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "X_ray_green",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "sky",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "X_ray_red",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "gold",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "beach",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "tropical_beach",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "FUR": [
+    {
+      "trait": "dark_brown",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "White_FUR",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "lavender",
+      "rarity": 4.760000000000001,
+      "tier": "rare",
+      "count": 119
+    },
+    {
+      "trait": "orange",
+      "rarity": 4.88,
+      "tier": "rare",
+      "count": 122
+    },
+    {
+      "trait": "dark_brown_fur",
+      "rarity": 4.279999999999999,
+      "tier": "rare",
+      "count": 107
+    },
+    {
+      "trait": "light_grey",
+      "rarity": 3.84,
+      "tier": "rare",
+      "count": 96
+    },
+    {
+      "trait": "shiny_apple_green",
+      "rarity": 0.48,
+      "tier": "legendary",
+      "count": 12
+    },
+    {
+      "trait": "APPLE_GREEN_FUR",
+      "rarity": 3.2,
+      "tier": "rare",
+      "count": 80
+    },
+    {
+      "trait": "shiny_sky_blue",
+      "rarity": 3.6799999999999997,
+      "tier": "rare",
+      "count": 92
+    },
+    {
+      "trait": "rainbow_fur",
+      "rarity": 4.2,
+      "tier": "rare",
+      "count": 105
+    },
+    {
+      "trait": "shiny_dark_grey",
+      "rarity": 3.16,
+      "tier": "rare",
+      "count": 79
+    },
+    {
+      "trait": "dark_grey_fur",
+      "rarity": 5.52,
+      "tier": "rare",
+      "count": 138
+    },
+    {
+      "trait": "sky_blue_fur",
+      "rarity": 4.92,
+      "tier": "rare",
+      "count": 123
+    },
+    {
+      "trait": "shiny_dark_yellow",
+      "rarity": 0.88,
+      "tier": "legendary",
+      "count": 22
+    },
+    {
+      "trait": "vivid_green_fur",
+      "rarity": 4.72,
+      "tier": "rare",
+      "count": 118
+    },
+    {
+      "trait": "shiny_dark_brown",
+      "rarity": 3.9600000000000004,
+      "tier": "rare",
+      "count": 99
+    },
+    {
+      "trait": "shiny_rainbow",
+      "rarity": 0.44,
+      "tier": "legendary",
+      "count": 11
+    },
+    {
+      "trait": "shiny_lavender",
+      "rarity": 3.9600000000000004,
+      "tier": "rare",
+      "count": 99
+    },
+    {
+      "trait": "dark_yellow_fur",
+      "rarity": 4.5600000000000005,
+      "tier": "rare",
+      "count": 114
+    },
+    {
+      "trait": "shiny_vivid_green",
+      "rarity": 3.08,
+      "tier": "rare",
+      "count": 77
+    },
+    {
+      "trait": "blue_fur",
+      "rarity": 4.24,
+      "tier": "rare",
+      "count": 106
+    },
+    {
+      "trait": "pink",
+      "rarity": 4.96,
+      "tier": "rare",
+      "count": 124
+    },
+    {
+      "trait": "light_brown",
+      "rarity": 4.96,
+      "tier": "rare",
+      "count": 124
+    },
+    {
+      "trait": "dark_purple_fur",
+      "rarity": 4.32,
+      "tier": "rare",
+      "count": 108
+    },
+    {
+      "trait": "shiny_pink",
+      "rarity": 0.76,
+      "tier": "legendary",
+      "count": 19
+    },
+    {
+      "trait": "lemon_gree_fur",
+      "rarity": 3.52,
+      "tier": "rare",
+      "count": 88
+    },
+    {
+      "trait": "shiny_dark_purple_fur",
+      "rarity": 0.96,
+      "tier": "legendary",
+      "count": 24
+    },
+    {
+      "trait": "light_yellow",
+      "rarity": 5.36,
+      "tier": "rare",
+      "count": 134
+    },
+    {
+      "trait": "shiny_light_grey",
+      "rarity": 0.44,
+      "tier": "legendary",
+      "count": 11
+    },
+    {
+      "trait": "shiny_orange",
+      "rarity": 0.8,
+      "tier": "legendary",
+      "count": 20
+    },
+    {
+      "trait": "GREEN_FUR",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "shiny_light_yellow",
+      "rarity": 0.6799999999999999,
+      "tier": "legendary",
+      "count": 17
+    },
+    {
+      "trait": "shiny_blue",
+      "rarity": 0.88,
+      "tier": "legendary",
+      "count": 22
+    },
+    {
+      "trait": "dark_purple_FUR",
+      "rarity": 1.1199999999999999,
+      "tier": "epic",
+      "count": 28
+    },
+    {
+      "trait": "shiny_lemon_green",
+      "rarity": 0.88,
+      "tier": "legendary",
+      "count": 22
+    },
+    {
+      "trait": "PINK_FUR",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "Dark_grey",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "outline",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "shiny_light_brown",
+      "rarity": 0.6,
+      "tier": "legendary",
+      "count": 15
+    },
+    {
+      "trait": "dark_yellow",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "skeleton",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "dark_grey",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "outline_3D",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "shiny_dark_purple",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "ASC_BLUE_FUR",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Pink",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "SHIRT": [
+    {
+      "trait": "casual_blue_shirt",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Black_shirt",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "white_sweat",
+      "rarity": 3.4799999999999995,
+      "tier": "rare",
+      "count": 87
+    },
+    {
+      "trait": "black-tunique",
+      "rarity": 3.88,
+      "tier": "rare",
+      "count": 97
+    },
+    {
+      "trait": "purple_sweat",
+      "rarity": 4.2,
+      "tier": "rare",
+      "count": 105
+    },
+    {
+      "trait": "mysteri_shirt",
+      "rarity": 1.68,
+      "tier": "epic",
+      "count": 42
+    },
+    {
+      "trait": "red_tunique",
+      "rarity": 3.5999999999999996,
+      "tier": "rare",
+      "count": 90
+    },
+    {
+      "trait": "yellow_zip_jacket",
+      "rarity": 3.84,
+      "tier": "rare",
+      "count": 96
+    },
+    {
+      "trait": "artic_camo",
+      "rarity": 3.88,
+      "tier": "rare",
+      "count": 97
+    },
+    {
+      "trait": "orange_zip_jacket",
+      "rarity": 4.24,
+      "tier": "rare",
+      "count": 106
+    },
+    {
+      "trait": "ninja_jacket",
+      "rarity": 1.96,
+      "tier": "epic",
+      "count": 49
+    },
+    {
+      "trait": "chef_jacket",
+      "rarity": 3.7199999999999998,
+      "tier": "rare",
+      "count": 93
+    },
+    {
+      "trait": "peasan",
+      "rarity": 3.6799999999999997,
+      "tier": "rare",
+      "count": 92
+    },
+    {
+      "trait": "white_kimono",
+      "rarity": 1.7999999999999998,
+      "tier": "epic",
+      "count": 45
+    },
+    {
+      "trait": "zip_jacket",
+      "rarity": 1.76,
+      "tier": "epic",
+      "count": 44
+    },
+    {
+      "trait": "fudge_suit",
+      "rarity": 1.8399999999999999,
+      "tier": "epic",
+      "count": 46
+    },
+    {
+      "trait": "pink_hoodie",
+      "rarity": 4.04,
+      "tier": "rare",
+      "count": 101
+    },
+    {
+      "trait": "smoking",
+      "rarity": 1.68,
+      "tier": "epic",
+      "count": 42
+    },
+    {
+      "trait": "scientific_jacket",
+      "rarity": 3.52,
+      "tier": "rare",
+      "count": 88
+    },
+    {
+      "trait": "purple_tracksuit",
+      "rarity": 4.16,
+      "tier": "rare",
+      "count": 104
+    },
+    {
+      "trait": "blue_suit",
+      "rarity": 1.2,
+      "tier": "epic",
+      "count": 30
+    },
+    {
+      "trait": "green_tunique",
+      "rarity": 3.4799999999999995,
+      "tier": "rare",
+      "count": 87
+    },
+    {
+      "trait": "blue_tunique",
+      "rarity": 3.7199999999999998,
+      "tier": "rare",
+      "count": 93
+    },
+    {
+      "trait": "gamer-tunique",
+      "rarity": 1.32,
+      "tier": "epic",
+      "count": 33
+    },
+    {
+      "trait": "red_jacket",
+      "rarity": 3.7199999999999998,
+      "tier": "rare",
+      "count": 93
+    },
+    {
+      "trait": "yellow_vest",
+      "rarity": 1.72,
+      "tier": "epic",
+      "count": 43
+    },
+    {
+      "trait": "sheriff_suit",
+      "rarity": 1.7999999999999998,
+      "tier": "epic",
+      "count": 45
+    },
+    {
+      "trait": "yellow_suit",
+      "rarity": 1.68,
+      "tier": "epic",
+      "count": 42
+    },
+    {
+      "trait": "sunset",
+      "rarity": 2.7199999999999998,
+      "tier": "epic",
+      "count": 68
+    },
+    {
+      "trait": "patient_jacket",
+      "rarity": 3.52,
+      "tier": "rare",
+      "count": 88
+    },
+    {
+      "trait": "blue_kimono",
+      "rarity": 1.5599999999999998,
+      "tier": "epic",
+      "count": 39
+    },
+    {
+      "trait": "simple_black_jacket",
+      "rarity": 3.4799999999999995,
+      "tier": "rare",
+      "count": 87
+    },
+    {
+      "trait": "superhero_tunic",
+      "rarity": 0.96,
+      "tier": "legendary",
+      "count": 24
+    },
+    {
+      "trait": "pride_sweat",
+      "rarity": 3.1199999999999997,
+      "tier": "rare",
+      "count": 78
+    },
+    {
+      "trait": "red_basket",
+      "rarity": 1.5599999999999998,
+      "tier": "epic",
+      "count": 39
+    },
+    {
+      "trait": "jail",
+      "rarity": 1.08,
+      "tier": "epic",
+      "count": 27
+    },
+    {
+      "trait": "black_kimono",
+      "rarity": 1.4000000000000001,
+      "tier": "epic",
+      "count": 35
+    },
+    {
+      "trait": "brown_jacket",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "e_jacket",
+      "rarity": 1.8800000000000001,
+      "tier": "epic",
+      "count": 47
+    },
+    {
+      "trait": "royal_tunic",
+      "rarity": 0.96,
+      "tier": "legendary",
+      "count": 24
+    },
+    {
+      "trait": "Jump_sweat",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "green_jersey",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "christmas_suit",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "outline",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "simple_black_jacke",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "knight_armor",
+      "rarity": 0.24,
+      "tier": "legendary",
+      "count": 6
+    },
+    {
+      "trait": "body_robot",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "yellow_raincoat",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "blue_shirt",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "ninja_jacke",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "black_suit",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "knight",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "sweat_jumper",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "_knight",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "clown_jacket",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "superhero_costume",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "bee_shirt",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "blue_sweatshirt",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "black_zip",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "outline_3D",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "purple_suit",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "knight_tunic",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "knight_shirt",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "cowboy_shirt",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "striped_shirt",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Hoodie",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "BODY": [
+    {
+      "trait": "white_skin",
+      "rarity": 98.2,
+      "tier": "common",
+      "count": 2455
+    },
+    {
+      "trait": "Dark_green_skin",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "green_light_skin",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "purple_skin",
+      "rarity": 1.04,
+      "tier": "epic",
+      "count": 26
+    },
+    {
+      "trait": "pink_skin",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "outline",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "Robot_skin",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "Zombie_skin",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "outline_blue",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "outline_green",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "outline_red",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "grey_skin",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "orange_skin",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "blue_skin",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "outline_3D",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Purple_skin",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "EYES": [
+    {
+      "trait": "thief_headband",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Headband",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "white_triangle",
+      "rarity": 1.7999999999999998,
+      "tier": "epic",
+      "count": 45
+    },
+    {
+      "trait": "samurai",
+      "rarity": 3.2800000000000002,
+      "tier": "rare",
+      "count": 82
+    },
+    {
+      "trait": "shy",
+      "rarity": 3.1199999999999997,
+      "tier": "rare",
+      "count": 78
+    },
+    {
+      "trait": "angry",
+      "rarity": 3.52,
+      "tier": "rare",
+      "count": 88
+    },
+    {
+      "trait": "cubism",
+      "rarity": 3.4000000000000004,
+      "tier": "rare",
+      "count": 85
+    },
+    {
+      "trait": "thughlife",
+      "rarity": 2.04,
+      "tier": "epic",
+      "count": 51
+    },
+    {
+      "trait": "red_triangle",
+      "rarity": 2.8400000000000003,
+      "tier": "epic",
+      "count": 71
+    },
+    {
+      "trait": "serialkiller",
+      "rarity": 2.68,
+      "tier": "epic",
+      "count": 67
+    },
+    {
+      "trait": "skeptical",
+      "rarity": 3.16,
+      "tier": "rare",
+      "count": 79
+    },
+    {
+      "trait": "very_angry",
+      "rarity": 2.8400000000000003,
+      "tier": "epic",
+      "count": 71
+    },
+    {
+      "trait": "boring",
+      "rarity": 3.16,
+      "tier": "rare",
+      "count": 79
+    },
+    {
+      "trait": "cute_left",
+      "rarity": 2.76,
+      "tier": "epic",
+      "count": 69
+    },
+    {
+      "trait": "very_exasperated",
+      "rarity": 3.2,
+      "tier": "rare",
+      "count": 80
+    },
+    {
+      "trait": "girly",
+      "rarity": 3.08,
+      "tier": "rare",
+      "count": 77
+    },
+    {
+      "trait": "big",
+      "rarity": 3.36,
+      "tier": "rare",
+      "count": 84
+    },
+    {
+      "trait": "black-tecno-glasses",
+      "rarity": 3.16,
+      "tier": "rare",
+      "count": 79
+    },
+    {
+      "trait": "innocent",
+      "rarity": 3.08,
+      "tier": "rare",
+      "count": 77
+    },
+    {
+      "trait": "xd",
+      "rarity": 3.36,
+      "tier": "rare",
+      "count": 84
+    },
+    {
+      "trait": "kawai",
+      "rarity": 2.2399999999999998,
+      "tier": "epic",
+      "count": 56
+    },
+    {
+      "trait": "nerd_glasses",
+      "rarity": 3.16,
+      "tier": "rare",
+      "count": 79
+    },
+    {
+      "trait": "cuty",
+      "rarity": 3.1199999999999997,
+      "tier": "rare",
+      "count": 78
+    },
+    {
+      "trait": "money",
+      "rarity": 0.44,
+      "tier": "legendary",
+      "count": 11
+    },
+    {
+      "trait": "kawai_sleep",
+      "rarity": 2.88,
+      "tier": "epic",
+      "count": 72
+    },
+    {
+      "trait": "blood",
+      "rarity": 1.96,
+      "tier": "epic",
+      "count": 49
+    },
+    {
+      "trait": "green-tecno-glasses",
+      "rarity": 2.0,
+      "tier": "epic",
+      "count": 50
+    },
+    {
+      "trait": "cartoon_big",
+      "rarity": 3.4000000000000004,
+      "tier": "rare",
+      "count": 85
+    },
+    {
+      "trait": "exasperated",
+      "rarity": 3.0,
+      "tier": "rare",
+      "count": 75
+    },
+    {
+      "trait": "cyborg_eyes",
+      "rarity": 2.36,
+      "tier": "epic",
+      "count": 59
+    },
+    {
+      "trait": "killer",
+      "rarity": 2.12,
+      "tier": "epic",
+      "count": 53
+    },
+    {
+      "trait": "miopic",
+      "rarity": 2.96,
+      "tier": "epic",
+      "count": 74
+    },
+    {
+      "trait": "cyborg_lazer_eyes",
+      "rarity": 1.0,
+      "tier": "epic",
+      "count": 25
+    },
+    {
+      "trait": "rockstar",
+      "rarity": 1.72,
+      "tier": "epic",
+      "count": 43
+    },
+    {
+      "trait": "cute_right",
+      "rarity": 3.1199999999999997,
+      "tier": "rare",
+      "count": 78
+    },
+    {
+      "trait": "crazy_eyes",
+      "rarity": 1.8800000000000001,
+      "tier": "epic",
+      "count": 47
+    },
+    {
+      "trait": "housemucis_glasses",
+      "rarity": 2.0,
+      "tier": "epic",
+      "count": 50
+    },
+    {
+      "trait": "robot",
+      "rarity": 0.6,
+      "tier": "legendary",
+      "count": 15
+    },
+    {
+      "trait": "red_lazer",
+      "rarity": 1.2,
+      "tier": "epic",
+      "count": 30
+    },
+    {
+      "trait": "lazer-eyes",
+      "rarity": 0.9199999999999999,
+      "tier": "legendary",
+      "count": 23
+    },
+    {
+      "trait": "pirate",
+      "rarity": 1.16,
+      "tier": "epic",
+      "count": 29
+    },
+    {
+      "trait": "3d_glasses",
+      "rarity": 0.84,
+      "tier": "legendary",
+      "count": 21
+    },
+    {
+      "trait": "celestial",
+      "rarity": 0.8,
+      "tier": "legendary",
+      "count": 20
+    },
+    {
+      "trait": "crazy_eyers",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "upset_eyes",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "cute_right_black",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "housemucis_glasse",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "Money",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "cyborg_lazer_green",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "Zombies_eyes",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "reading_glasses",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "skeleton_eyes",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "hughlife",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "pilot_glasses",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "evil_clown_red",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "cute_left_black",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "evil_clown_purple",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "blue_eyes",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "CHEEK": [
+    {
+      "trait": "freckle",
+      "rarity": 6.36,
+      "tier": "rare",
+      "count": 159
+    },
+    {
+      "trait": "smiley",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "santa_barber",
+      "rarity": 1.6,
+      "tier": "epic",
+      "count": 40
+    },
+    {
+      "trait": "scar",
+      "rarity": 7.16,
+      "tier": "uncommon",
+      "count": 179
+    },
+    {
+      "trait": "orange",
+      "rarity": 3.2800000000000002,
+      "tier": "rare",
+      "count": 82
+    },
+    {
+      "trait": "barber",
+      "rarity": 6.6000000000000005,
+      "tier": "rare",
+      "count": 165
+    },
+    {
+      "trait": "dirt",
+      "rarity": 6.36,
+      "tier": "rare",
+      "count": 159
+    },
+    {
+      "trait": "red",
+      "rarity": 3.56,
+      "tier": "rare",
+      "count": 89
+    },
+    {
+      "trait": "bandage",
+      "rarity": 3.0,
+      "tier": "rare",
+      "count": 75
+    },
+    {
+      "trait": "gash",
+      "rarity": 6.68,
+      "tier": "rare",
+      "count": 167
+    },
+    {
+      "trait": "scratch",
+      "rarity": 2.52,
+      "tier": "epic",
+      "count": 63
+    },
+    {
+      "trait": "date",
+      "rarity": 6.64,
+      "tier": "rare",
+      "count": 166
+    },
+    {
+      "trait": "barcode_cheek",
+      "rarity": 3.52,
+      "tier": "rare",
+      "count": 88
+    },
+    {
+      "trait": "smak",
+      "rarity": 1.6,
+      "tier": "epic",
+      "count": 40
+    },
+    {
+      "trait": "purple_barber",
+      "rarity": 0.12,
+      "tier": "legendary",
+      "count": 3
+    },
+    {
+      "trait": "code",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "red_scarf",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "joker_smile",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "barber_kiss",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "shadow",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "smiley_tongue",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "ACCESSORY": [
+    {
+      "trait": "beer",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "baseball_bat",
+      "rarity": 5.56,
+      "tier": "rare",
+      "count": 139
+    },
+    {
+      "trait": "gold_nose",
+      "rarity": 6.2,
+      "tier": "rare",
+      "count": 155
+    },
+    {
+      "trait": "photo",
+      "rarity": 1.76,
+      "tier": "epic",
+      "count": 44
+    },
+    {
+      "trait": "ruler",
+      "rarity": 3.08,
+      "tier": "rare",
+      "count": 77
+    },
+    {
+      "trait": "smiling_sloth",
+      "rarity": 1.44,
+      "tier": "epic",
+      "count": 36
+    },
+    {
+      "trait": "soda",
+      "rarity": 2.8000000000000003,
+      "tier": "epic",
+      "count": 70
+    },
+    {
+      "trait": "silver_nose",
+      "rarity": 5.6000000000000005,
+      "tier": "rare",
+      "count": 140
+    },
+    {
+      "trait": "coffee",
+      "rarity": 2.76,
+      "tier": "epic",
+      "count": 69
+    },
+    {
+      "trait": "crime-scene",
+      "rarity": 1.4000000000000001,
+      "tier": "epic",
+      "count": 35
+    },
+    {
+      "trait": "rain",
+      "rarity": 5.64,
+      "tier": "rare",
+      "count": 141
+    },
+    {
+      "trait": "fly",
+      "rarity": 5.56,
+      "tier": "rare",
+      "count": 139
+    },
+    {
+      "trait": "ball",
+      "rarity": 1.3599999999999999,
+      "tier": "epic",
+      "count": 34
+    },
+    {
+      "trait": "blue-penguin",
+      "rarity": 2.76,
+      "tier": "epic",
+      "count": 69
+    },
+    {
+      "trait": "snow",
+      "rarity": 5.04,
+      "tier": "rare",
+      "count": 126
+    },
+    {
+      "trait": "cola",
+      "rarity": 2.2800000000000002,
+      "tier": "epic",
+      "count": 57
+    },
+    {
+      "trait": "newspaper",
+      "rarity": 1.6,
+      "tier": "epic",
+      "count": 40
+    },
+    {
+      "trait": "microphone",
+      "rarity": 2.8400000000000003,
+      "tier": "epic",
+      "count": 71
+    },
+    {
+      "trait": "jackrussel",
+      "rarity": 2.2800000000000002,
+      "tier": "epic",
+      "count": 57
+    },
+    {
+      "trait": "downpour",
+      "rarity": 1.3599999999999999,
+      "tier": "epic",
+      "count": 34
+    },
+    {
+      "trait": "honey",
+      "rarity": 2.0,
+      "tier": "epic",
+      "count": 50
+    },
+    {
+      "trait": "spear",
+      "rarity": 0.32,
+      "tier": "legendary",
+      "count": 8
+    },
+    {
+      "trait": "knight_sword",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "knight_hood",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "double_earing_grey",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "bitcoin_chain",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "balloon",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "watermelon",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "computer",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "mask",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "HAT": [
+    {
+      "trait": "Hair_on_spikes",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "tennis",
+      "rarity": 2.8000000000000003,
+      "tier": "epic",
+      "count": 70
+    },
+    {
+      "trait": "pirate",
+      "rarity": 2.92,
+      "tier": "epic",
+      "count": 73
+    },
+    {
+      "trait": "knight_helmet",
+      "rarity": 1.68,
+      "tier": "epic",
+      "count": 42
+    },
+    {
+      "trait": "red_helmet",
+      "rarity": 3.2399999999999998,
+      "tier": "rare",
+      "count": 81
+    },
+    {
+      "trait": "heart",
+      "rarity": 3.2399999999999998,
+      "tier": "rare",
+      "count": 81
+    },
+    {
+      "trait": "mystery",
+      "rarity": 3.36,
+      "tier": "rare",
+      "count": 84
+    },
+    {
+      "trait": "killer",
+      "rarity": 1.28,
+      "tier": "epic",
+      "count": 32
+    },
+    {
+      "trait": "jazz",
+      "rarity": 3.04,
+      "tier": "rare",
+      "count": 76
+    },
+    {
+      "trait": "straw",
+      "rarity": 2.8400000000000003,
+      "tier": "epic",
+      "count": 71
+    },
+    {
+      "trait": "grey_cap",
+      "rarity": 2.92,
+      "tier": "epic",
+      "count": 73
+    },
+    {
+      "trait": "bandage",
+      "rarity": 3.08,
+      "tier": "rare",
+      "count": 77
+    },
+    {
+      "trait": "purple_bandana",
+      "rarity": 3.2,
+      "tier": "rare",
+      "count": 80
+    },
+    {
+      "trait": "crypto-hat",
+      "rarity": 1.28,
+      "tier": "epic",
+      "count": 32
+    },
+    {
+      "trait": "poker",
+      "rarity": 1.48,
+      "tier": "epic",
+      "count": 37
+    },
+    {
+      "trait": "paper",
+      "rarity": 3.04,
+      "tier": "rare",
+      "count": 76
+    },
+    {
+      "trait": "lean",
+      "rarity": 3.52,
+      "tier": "rare",
+      "count": 88
+    },
+    {
+      "trait": "army",
+      "rarity": 3.0,
+      "tier": "rare",
+      "count": 75
+    },
+    {
+      "trait": "purple_sunhat",
+      "rarity": 3.7199999999999998,
+      "tier": "rare",
+      "count": 93
+    },
+    {
+      "trait": "police_helmet",
+      "rarity": 1.6,
+      "tier": "epic",
+      "count": 40
+    },
+    {
+      "trait": "karate",
+      "rarity": 3.5999999999999996,
+      "tier": "rare",
+      "count": 90
+    },
+    {
+      "trait": "sunset",
+      "rarity": 3.08,
+      "tier": "rare",
+      "count": 77
+    },
+    {
+      "trait": "green_bandana",
+      "rarity": 2.8400000000000003,
+      "tier": "epic",
+      "count": 71
+    },
+    {
+      "trait": "blue_helmet",
+      "rarity": 3.4799999999999995,
+      "tier": "rare",
+      "count": 87
+    },
+    {
+      "trait": "vikings",
+      "rarity": 2.32,
+      "tier": "epic",
+      "count": 58
+    },
+    {
+      "trait": "E-hat",
+      "rarity": 1.1199999999999999,
+      "tier": "epic",
+      "count": 28
+    },
+    {
+      "trait": "mexican",
+      "rarity": 3.44,
+      "tier": "rare",
+      "count": 86
+    },
+    {
+      "trait": "gentleman",
+      "rarity": 3.0,
+      "tier": "rare",
+      "count": 75
+    },
+    {
+      "trait": "flower_sunhat",
+      "rarity": 2.56,
+      "tier": "epic",
+      "count": 64
+    },
+    {
+      "trait": "horn",
+      "rarity": 1.28,
+      "tier": "epic",
+      "count": 32
+    },
+    {
+      "trait": "halo",
+      "rarity": 0.9199999999999999,
+      "tier": "legendary",
+      "count": 23
+    },
+    {
+      "trait": "red_horn",
+      "rarity": 0.5599999999999999,
+      "tier": "legendary",
+      "count": 14
+    },
+    {
+      "trait": "brain",
+      "rarity": 0.36,
+      "tier": "legendary",
+      "count": 9
+    },
+    {
+      "trait": "Donut",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "briefs",
+      "rarity": 1.96,
+      "tier": "epic",
+      "count": 49
+    },
+    {
+      "trait": "knight_crown",
+      "rarity": 0.96,
+      "tier": "legendary",
+      "count": 24
+    },
+    {
+      "trait": "Ball",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "christmas",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "chef",
+      "rarity": 0.44,
+      "tier": "legendary",
+      "count": 11
+    },
+    {
+      "trait": "brain_transplant",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "baldness",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "bitcoin_hat",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "knight_soldier_helmet",
+      "rarity": 0.24,
+      "tier": "legendary",
+      "count": 6
+    },
+    {
+      "trait": "red_hood",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "hat_with_horn",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "rabbit_ear",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "black_cap",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "knight_hood",
+      "rarity": 0.08,
+      "tier": "legendary",
+      "count": 2
+    },
+    {
+      "trait": "fisherman_hat",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Cowboy_Hat",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Propeller_cap",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    },
+    {
+      "trait": "Pizza",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ],
+  "POCKET": [
+    {
+      "trait": "hamster",
+      "rarity": 9.24,
+      "tier": "uncommon",
+      "count": 231
+    },
+    {
+      "trait": "closed",
+      "rarity": 4.3999999999999995,
+      "tier": "rare",
+      "count": 110
+    },
+    {
+      "trait": "flower",
+      "rarity": 2.36,
+      "tier": "epic",
+      "count": 59
+    },
+    {
+      "trait": "medium",
+      "rarity": 2.48,
+      "tier": "epic",
+      "count": 62
+    },
+    {
+      "trait": "cigarette",
+      "rarity": 3.04,
+      "tier": "rare",
+      "count": 76
+    },
+    {
+      "trait": "fat",
+      "rarity": 4.3999999999999995,
+      "tier": "rare",
+      "count": 110
+    },
+    {
+      "trait": "money",
+      "rarity": 1.16,
+      "tier": "epic",
+      "count": 29
+    },
+    {
+      "trait": "alien",
+      "rarity": 2.48,
+      "tier": "epic",
+      "count": 62
+    },
+    {
+      "trait": "grenade",
+      "rarity": 5.56,
+      "tier": "rare",
+      "count": 139
+    },
+    {
+      "trait": "simple",
+      "rarity": 6.0,
+      "tier": "rare",
+      "count": 150
+    },
+    {
+      "trait": "pen",
+      "rarity": 3.5999999999999996,
+      "tier": "rare",
+      "count": 90
+    },
+    {
+      "trait": "Money",
+      "rarity": 0.2,
+      "tier": "legendary",
+      "count": 5
+    },
+    {
+      "trait": "suit_pocket",
+      "rarity": 0.04,
+      "tier": "legendary",
+      "count": 1
+    }
+  ]
+}
