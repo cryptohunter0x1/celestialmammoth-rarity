@@ -249,23 +249,32 @@ def normalize_trait_name(trait, category):
 # Remplacer la fonction load_data() par celle-ci
 @st.cache_data
 def load_data():
-    # Charger les données de rareté
-    with open("nft_traits_rarity.json", "r") as f:
-        data = json.load(f)
+    try:
+        with open("nft_traits_rarity.json", "r") as f:
+            data = json.load(f)
         
-    # Charger les métadonnées des NFTs, mais seulement ceux qui ont été mintés
-    with open("nfts_metadata.json", "r") as f:
-        all_nfts = json.load(f)
+        # Charger les métadonnées des NFTs, mais seulement ceux qui ont été mintés
+        with open("nfts_metadata.json", "r") as f:
+            all_nfts = json.load(f)
+            
+            # Ne garder que les NFTs mintés
+            nft_data = {}
+            for nft_id, traits in all_nfts.items():
+                # Extraire le numéro du NFT
+                nft_number = int(nft_id.replace("nft_", ""))
+                if nft_number <= TOTAL_MINTED_NFTS:
+                    nft_data[nft_id] = traits
         
-        # Ne garder que les NFTs mintés
-        nft_data = {}
-        for nft_id, traits in all_nfts.items():
-            # Extraire le numéro du NFT
-            nft_number = int(nft_id.replace("nft_", ""))
-            if nft_number <= TOTAL_MINTED_NFTS:
-                nft_data[nft_id] = traits
-    
-    return data, nft_data
+        return data, nft_data
+    except json.JSONDecodeError as e:
+        print(f"Erreur de décodage JSON : {e}")
+        return None, None
+    except FileNotFoundError as e:
+        print(f"Fichier non trouvé : {e}")
+        return None, None
+    except Exception as e:
+        print(f"Une erreur est survenue : {e}")
+        return None, None
 
 # Charger les données
 data, nft_data = load_data()
