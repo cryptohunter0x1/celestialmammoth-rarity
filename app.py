@@ -84,6 +84,38 @@ h3, h4 {
     border: 1px solid rgba(76, 175, 80, 0.5) !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
 }
+
+/* Masquer les balises </div> indésirables */
+.stExpander .stMarkdown:has(> p:contains("</div>")) > p:contains("</div>") {
+    display: none;
+}
+
+/* CSS très simple pour masquer littéralement le texte </div> */
+.stMarkdown p:contains("</div>") {
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+/* Masquer les balises </div> indésirables */
+.stMarkdown p {
+    display: block;
+}
+
+.stMarkdown p:only-child:contains("</div>") {
+    display: none !important;
+}
+
+p:empty, p:contains("</div>") {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -197,6 +229,9 @@ TRAIT_MAP = {
     "empty": "empty"
 }
 
+# Correction du nombre exact de NFTs mintés
+from config import TOTAL_MINTED_NFTS
+
 # Fonction pour normaliser le nom de catégorie
 def normalize_category_name(category):
     # Convertir en minuscules et supprimer les espaces
@@ -214,35 +249,26 @@ def normalize_trait_name(trait, category):
 # Remplacer la fonction load_data() par celle-ci
 @st.cache_data
 def load_data():
-    # D'abord, essayer de charger les données de rareté calculées au préalable
-    try:
-        with open("calculated_rarity.json", "r") as f:
-            return json.load(f)
-    except:
-        # Si le fichier n'existe pas, calculer la rareté et l'enregistrer
-        rarity_catalog = calculate_real_rarity()
+    # Charger les données de rareté
+    with open("nft_traits_rarity.json", "r") as f:
+        data = json.load(f)
         
-        try:
-            with open("calculated_rarity.json", "w") as f:
-                json.dump(rarity_catalog, f, indent=2)
-        except:
-            pass  # Ignorer les erreurs d'écriture
+    # Charger les métadonnées des NFTs, mais seulement ceux qui ont été mintés
+    with open("nfts_metadata.json", "r") as f:
+        all_nfts = json.load(f)
         
-        return rarity_catalog
-
-# Fonction pour charger les données des NFTs
-@st.cache_data
-def load_nft_data():
-    try:
-        with open("nfts_metadata.json", "r", encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        # Si le fichier n'existe pas, retourner un dictionnaire vide
-        return {}
+        # Ne garder que les NFTs mintés
+        nft_data = {}
+        for nft_id, traits in all_nfts.items():
+            # Extraire le numéro du NFT
+            nft_number = int(nft_id.replace("nft_", ""))
+            if nft_number <= TOTAL_MINTED_NFTS:
+                nft_data[nft_id] = traits
+    
+    return data, nft_data
 
 # Charger les données
-data = load_data()
-nft_data = load_nft_data()
+data, nft_data = load_data()
 
 # En-tête avec logo amélioré
 st.markdown('<div class="app-header">', unsafe_allow_html=True)
@@ -286,77 +312,87 @@ with tabs[0]:
     with col1:
         if input_method == "Enter NFT Number":
             st.subheader("Enter your NFT number")
-            input_nft = st.text_input("Enter your NFT number")
+            input_nft = st.text_input("Enter your NFT number", key="nft_number_input")
             
-            # Bouton de recherche et traitement
             if input_nft:
-                # Normaliser le numéro de NFT
-                normalized_nft_number = normalize_nft_number(input_nft)
-                
-                # Vérifier l'existence du NFT
-                if normalized_nft_number in nft_data or input_nft in nft_data:
-                    nft_key = normalized_nft_number if normalized_nft_number in nft_data else input_nft
-                    st.success(f"NFT #{input_nft} found!")
+                try:
+                    nft_number = int(input_nft)
                     
-                    # Récupérer les traits
-                    nft_traits = nft_data[nft_key]
+                    # Vérifier si le NFT a été minté
+                    if nft_number > TOTAL_MINTED_NFTS:
+                        st.warning(f"NFT #{nft_number} has not been minted. Only NFTs up to #{TOTAL_MINTED_NFTS} have been minted.")
+                        st.stop()  # Arrêter l'exécution ici
                     
-                    # Afficher les traits bruts
-                    st.write("Traits found in this NFT:", nft_traits)
+                    # Continuer seulement si le NFT a été minté
+                    normalized_nft = normalize_nft_number(input_nft)
                     
-                    # Traiter chaque trait
-                    traits_with_rarity = 0
-                    for category, trait_name in nft_traits.items():
-                        if trait_name.lower() == "empty":
-                            continue
+                    if normalized_nft in nft_data:
+                        st.success(f"NFT #{input_nft} found!")
                         
-                        # Trouver ou générer la rareté du trait
-                        trait_info = find_trait_rarity(category, trait_name, data)
+                        # Récupérer les traits
+                        nft_traits = nft_data[normalized_nft]
                         
-                        if trait_info:
-                            # Ajouter aux traits sélectionnés
-                            selected_traits[category.upper()] = trait_info
-                            total_rarity += trait_info["rarity"]
-                            trait_count += 1
-                            traits_with_rarity += 1
-                            
-                            # Marquer si le trait a été généré
-                            if trait_info.get("generated"):
-                                st.info(f"Rarity for '{trait_name}' in '{category}' was estimated (no exact match found)")
-                    
-                    # Si aucun trait n'a été trouvé, afficher un message
-                    if traits_with_rarity == 0:
-                        st.warning("No traits with rarity data found for this NFT")
-                        st.info("Using default rarity values for visualization purposes")
+                        # Afficher les traits bruts
+                        st.write("Traits found in this NFT:", nft_traits)
                         
-                        # Générer des valeurs de rareté pour tous les traits
+                        # Traiter chaque trait
+                        traits_with_rarity = 0
                         for category, trait_name in nft_traits.items():
                             if trait_name.lower() == "empty":
                                 continue
                             
-                            # Générer une rareté aléatoire mais réaliste
-                            import random
-                            rarity = random.uniform(5.0, 20.0)
-                            tier = "common"
-                            if rarity < 3.0:
-                                tier = "legendary"
-                            elif rarity < 5.0:
-                                tier = "epic"
-                            elif rarity < 10.0:
-                                tier = "rare"
-                            elif rarity < 15.0:
-                                tier = "uncommon"
+                            # Trouver ou générer la rareté du trait
+                            trait_info = find_trait_rarity(category, trait_name, data)
                             
-                            trait_info = {
-                                "trait": trait_name,
-                                "rarity": rarity,
-                                "tier": tier,
-                                "generated": True
-                            }
+                            if trait_info:
+                                # Ajouter aux traits sélectionnés
+                                selected_traits[category.upper()] = trait_info
+                                total_rarity += trait_info["rarity"]
+                                trait_count += 1
+                                traits_with_rarity += 1
+                                
+                                # Marquer si le trait a été généré
+                                if trait_info.get("generated"):
+                                    st.info(f"Rarity for '{trait_name}' in '{category}' was estimated (no exact match found)")
+                        
+                        # Si aucun trait n'a été trouvé, afficher un message
+                        if traits_with_rarity == 0:
+                            st.warning("No traits with rarity data found for this NFT")
+                            st.info("Using default rarity values for visualization purposes")
                             
-                            selected_traits[category.upper()] = trait_info
-                            total_rarity += trait_info["rarity"]
-                            trait_count += 1
+                            # Générer des valeurs de rareté pour tous les traits
+                            for category, trait_name in nft_traits.items():
+                                if trait_name.lower() == "empty":
+                                    continue
+                                
+                                # Générer une rareté aléatoire mais réaliste
+                                import random
+                                rarity = random.uniform(5.0, 20.0)
+                                tier = "common"
+                                if rarity < 3.0:
+                                    tier = "legendary"
+                                elif rarity < 5.0:
+                                    tier = "epic"
+                                elif rarity < 10.0:
+                                    tier = "rare"
+                                elif rarity < 15.0:
+                                    tier = "uncommon"
+                                
+                                trait_info = {
+                                    "trait": trait_name,
+                                    "rarity": rarity,
+                                    "tier": tier,
+                                    "generated": True
+                                }
+                                
+                                selected_traits[category.upper()] = trait_info
+                                total_rarity += trait_info["rarity"]
+                                trait_count += 1
+                    else:
+                        st.error(f"NFT #{input_nft} not found in metadata.")
+                    
+                except ValueError:
+                    st.error("Please enter a valid NFT number.")
         else:
             # Code de sélection manuelle existant
             st.subheader("Select your traits")
@@ -402,15 +438,17 @@ with tabs[0]:
             
             # Afficher chaque trait avec ses étoiles
             for category, trait in selected_traits.items():
-                tier_color = {
-                    "common": "#8bc34a",     # Light green
-                    "uncommon": "#4CAF50",   # Medium green
-                    "rare": "#2196F3",       # Blue
-                    "epic": "#9C27B0",       # Purple
-                    "legendary": "#FFD700"   # Gold
+                # Couleurs par tier - ajouter la couleur pour "unique"
+                tier_colors = {
+                    "unique": "#FF00FF",     # Magenta/Rose vif
+                    "legendary": "#FFD700",  # Or
+                    "epic": "#9C27B0",       # Violet
+                    "rare": "#2196F3",       # Bleu
+                    "uncommon": "#4CAF50",   # Vert
+                    "common": "#8bc34a"      # Vert clair
                 }
                 
-                color = tier_color.get(trait["tier"], "#8bc34a")
+                color = tier_colors.get(trait["tier"], "#8bc34a")
                 stars_count = get_stars(trait["rarity"], trait["tier"])
                 
                 # Créer la chaîne d'étoiles (étoiles pleines suivies d'étoiles vides)
@@ -423,8 +461,7 @@ with tabs[0]:
                     unique_badge = '<span style="background-color: gold; color: black; padding: 2px 5px; border-radius: 10px; font-size: 10px; margin-left: 5px;">UNIQUE</span>'
                 
                 # Affichage amélioré
-                st.markdown(
-                    f"""
+                st.markdown(f"""
                     <div class="trait-card" style="border-left-color: {color}; margin-bottom: 15px; padding: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: #1e1e1e; border-left: 5px solid {color};">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div>
@@ -442,9 +479,7 @@ with tabs[0]:
                             {count_info}
                         </div>
                     </div>
-                    """, 
-                    unsafe_allow_html=True
-                )
+                """, unsafe_allow_html=True)
 
             # Ajouter une section résumé
             average_rarity = total_rarity / trait_count if trait_count > 0 else 0
@@ -587,8 +622,13 @@ with tabs[1]:
         
         with col1:
             # Filtrer par niveau de rareté
-            rarities = ["legendary", "epic", "rare", "uncommon", "common"]
-            rarity_filter = st.multiselect("Filter by rarity tier", rarities, default=rarities)
+            rarities = ["unique", "legendary", "epic", "rare", "uncommon", "common"]
+            rarity_filter = st.multiselect(
+                "Filter by rarity level:", 
+                rarities, 
+                default=["unique", "legendary"],
+                key="rarity_filter_1"  # Ajouter une clé unique
+            )
         
         with col2:
             # Trier par
@@ -675,25 +715,31 @@ with tabs[2]:
     st.header("Legendary & Rare NFTs Gallery")
     st.markdown("Discover the rarest NFTs in the collection, based on our advanced rarity calculation system.")
     
-    # Trouver les NFTs légendaires
-    try:
-        top_nfts = find_legendary_nfts(limit=50, rarity_data=data)
-    except Exception as e:
-        st.error(f"Erreur lors de la recherche des NFTs légendaires: {e}")
-        top_nfts = []
-    
-    # Filtrer par niveau de rareté
+    # Récupérer tous les NFTs mintés avec leur rareté
+    all_nfts_with_rarity = find_legendary_nfts(limit=1575, rarity_data=data)
+
+    # Permettre la sélection de tous les niveaux de rareté
     rarity_filter = st.multiselect(
-        "Filtrer par niveau de rareté", 
-        ["legendary", "epic", "rare", "uncommon", "common"],
-        default=["legendary", "epic"]
+        "Filter by rarity level:",
+        ["unique", "legendary", "epic", "rare", "uncommon", "common"],
+        default=["unique", "legendary", "epic", "rare", "uncommon", "common"],
+        key="rarity_filter_main"
     )
-    
-    filtered_nfts = [nft for nft in top_nfts if nft["tier"] in rarity_filter]
-    
-    # Afficher le nombre de NFTs trouvés
-    st.write(f"**{len(filtered_nfts)} NFTs** matching the selected criteria")
-    
+
+    # Filtrer selon la sélection
+    filtered_nfts = [nft for nft in all_nfts_with_rarity if nft["tier"] in rarity_filter]
+
+    # Afficher les statistiques
+    total_unique = sum(1 for nft in all_nfts_with_rarity if nft["tier"] == "unique")
+    total_legendary = sum(1 for nft in all_nfts_with_rarity if nft["tier"] == "legendary")
+    total_epic = sum(1 for nft in all_nfts_with_rarity if nft["tier"] == "epic")
+    total_rare = sum(1 for nft in all_nfts_with_rarity if nft["tier"] == "rare")
+    total_uncommon = sum(1 for nft in all_nfts_with_rarity if nft["tier"] == "uncommon")
+    total_common = sum(1 for nft in all_nfts_with_rarity if nft["tier"] == "common")
+
+    st.write(f"Total distribution: {total_unique} Unique | {total_legendary} Legendary | {total_epic} Epic | {total_rare} Rare | {total_uncommon} Uncommon | {total_common} Common")
+    st.write(f"Showing {len(filtered_nfts)} NFTs based on your filter selection")
+
     # Afficher les NFTs en grille simple
     if filtered_nfts:
         # Créer une grille de 3 colonnes
@@ -705,8 +751,8 @@ with tabs[2]:
             nft_number = nft["number"]
             tier = nft["tier"]
             score = nft["score"]
-            unique_count = nft["unique_count"]
-            legendary_count = nft["legendary_count"]
+            unique_count = sum(1 for t in nft["selected_traits"].values() if t.get("tier") == "unique")
+            legendary_count = sum(1 for t in nft["selected_traits"].values() if t.get("tier") == "legendary")
             
             # Couleurs par tier
             tier_colors = {
@@ -739,20 +785,35 @@ with tabs[2]:
                 with st.expander("Voir les traits"):
                     for category, trait in nft["selected_traits"].items():
                         trait_tier = trait["tier"]
-                        trait_color = tier_colors.get(trait_tier, "#8bc34a")
                         
                         # Badge UNIQUE si applicable
-                        unique_badge = ""
-                        if trait.get("count", 0) == 1:
-                            unique_badge = "🏆 UNIQUE"
+                        unique_badge = "🏆 UNIQUE" if trait.get("count", 0) == 1 else ""
                         
-                        # Afficher le trait
-                        st.markdown(f"""
-                        <div style="margin-bottom: 8px; padding: 5px; border-left: 3px solid {trait_color}; background-color: #2a2a2a;">
-                            <strong>{category}:</strong> {trait["trait"]} {unique_badge}<br>
-                            <small>Rareté: {trait.get('rarity', 0):.2f}% ({trait_tier.capitalize()})</small>
-                        </div>
-                        """, unsafe_allow_html=True)
+                        # Utiliser des colonnes pour afficher les informations
+                        col1, col2 = st.columns([1, 2])
+                        with col1:
+                            st.write(f"**{category}:**")
+                        with col2:
+                            st.write(f"{trait['trait']} {unique_badge}")
+                        
+                        # Et ajouter la rareté juste en dessous
+                        st.caption(f"Rareté: {trait.get('rarity', 0):.2f}% ({trait_tier.capitalize()})")
+                        
+                        # Ligne séparatrice optionnelle
+                        st.markdown("---")
+
+        # Statistiques de distribution
+        unique_count = sum(1 for nft in filtered_nfts if nft["tier"] == "unique")
+        legendary_count = sum(1 for nft in filtered_nfts if nft["tier"] == "legendary")
+        epic_count = sum(1 for nft in filtered_nfts if nft["tier"] == "epic")
+        rare_count = sum(1 for nft in filtered_nfts if nft["tier"] == "rare")
+        
+        st.write(f"Distribution: {unique_count} Unique | {legendary_count} Legendary | {epic_count} Epic | {rare_count} Rare")
+
+        # Ajouter un bouton pour afficher tous les NFTs
+        if st.button("Show All NFTs"):
+            # Force l'affichage de tous les NFTs en ignorant les filtres
+            filtered_nfts = all_nfts_with_rarity
     else:
         st.info("No NFT matches your criteria. Try modifying the filters.")
 
@@ -835,6 +896,45 @@ with tabs[3]:
             st.session_state.custom_mappings[category][nft_trait.lower()] = rarity_trait
             st.success(f"Added mapping: {nft_trait} → {rarity_trait} in {category}")
     
+    st.info(f"This collection has exactly {TOTAL_MINTED_NFTS} minted NFTs (numbered from 1 to {TOTAL_MINTED_NFTS}). Any NFT number above {TOTAL_MINTED_NFTS} was not minted and should not be considered for rarity analysis.")
+    
+    st.subheader("Rarity Distribution")
+    
+    # Calculer la distribution des niveaux de rareté
+    all_minteds = []
+    for nft_id, traits in nft_data.items():
+        # Vérifier si le NFT est minté
+        nft_number = int(nft_id.replace("nft_", ""))
+        if nft_number <= TOTAL_MINTED_NFTS:
+            rarity_pct, tier, _ = calculate_nft_rarity_score(traits, data)
+            all_minteds.append({"number": nft_number, "tier": tier})
+    
+    # Compter les niveaux
+    tier_counts = {}
+    for tier in ["unique", "legendary", "epic", "rare", "uncommon", "common"]:
+        tier_counts[tier] = sum(1 for nft in all_minteds if nft["tier"] == tier)
+    
+    # Afficher la distribution
+    st.write("Distribution naturelle des 1575 NFTs mintés:")
+    for tier, count in tier_counts.items():
+        percentage = (count / TOTAL_MINTED_NFTS) * 100
+        st.write(f"**{tier.capitalize()}**: {count} NFTs ({percentage:.1f}%)")
+    
+    st.subheader("Debug Information")
+
+    # Trouver le NFT le plus rare
+    rarest_nfts = sorted(all_minteds, key=lambda x: x.get("rarity_pct", 100))[:10]
+
+    st.write("Les 10 NFTs les plus rares:")
+    for nft in rarest_nfts:
+        st.write(f"NFT #{nft['number']} - Score: {nft.get('rarity_pct', 'N/A')}% - Tier: {nft['tier']} - Unique traits: {nft.get('unique_count', 0)}")
+
+    # Montrer la distribution des scores de rareté
+    st.write("Nombre de NFTs avec traits uniques:")
+    for i in range(5):
+        count = sum(1 for nft in all_minteds if nft.get("unique_count", 0) == i)
+        st.write(f"{i} traits uniques: {count} NFTs")
+    
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Footer
@@ -843,3 +943,15 @@ st.markdown("""
     <p>© 2025 CelestialMammoth on Eclipse | <a href="https://github.com/">GitHub</a> | <a href="https://x.com/CelestMammoth">@CelestMammoth</a></p>
 </div>
 """, unsafe_allow_html=True)
+
+# Fonction de diagnostic à appeler après chaque recherche
+def verify_minted_nfts(nft_list, operation_name=""):
+    unminted = [nft for nft in nft_list if int(nft["number"]) > TOTAL_MINTED_NFTS]
+    if unminted:
+        st.error(f"WARNING: Found {len(unminted)} unminted NFTs in results from {operation_name}!")
+        st.write(f"Unminted NFTs found: {[nft['number'] for nft in unminted]}")
+    return [nft for nft in nft_list if int(nft["number"]) <= TOTAL_MINTED_NFTS]
+
+# Puis l'utiliser sur les résultats:
+top_nfts = find_legendary_nfts(100, data)
+top_nfts = verify_minted_nfts(top_nfts, "find_legendary_nfts")
